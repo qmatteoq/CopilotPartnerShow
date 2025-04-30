@@ -1,0 +1,56 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/copilot/plugin/v2.2/schema.json",
+    "schema_version": "v2.2",
+    "name_for_human": "TicketAgent",
+    "description_for_human": "A plugin to manage support tickets",
+    "namespace": "ticketagent",
+    "functions": [
+        {
+            "name": "GetTickets",
+            "description": "Get the tickets with a given keyword in the title or assigned to a specific person",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.title",
+                        "subtitle": "$.id"
+                    },
+                    "static_template": {
+                        "file": "adaptiveCards/GetTickets.json"
+                    }
+                }
+            }
+        },
+        {
+            "name": "CreateTicket",
+            "description": "Create a new ticket",
+            "capabilities": {
+                "response_semantics": {
+                    "data_path": "$",
+                    "properties": {
+                        "title": "$.title",
+                        "subtitle": "$.description"
+                    },
+                    "static_template": {
+                        "file": "adaptiveCards/CreateTicket.json"
+                    }
+                }
+            }
+        }
+    ],
+    "runtimes": [
+        {
+            "type": "OpenApi",
+            "auth": {
+                "type": "None"
+            },
+            "spec": {
+                "url": "apiSpecificationFile/openapi.json"
+            },
+            "run_for_functions": [
+                "GetTickets",
+                "CreateTicket"
+            ]
+        }
+    ]
+}
