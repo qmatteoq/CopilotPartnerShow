@@ -1,18 +1,39 @@
-# Copilot Partner Show Samples
+# Copilot Partner Show — samples
 
-This repository contains a collection of sample projects featured in the Copilot Partner Show podcast. Each sample demonstrates different ways to extend Microsoft 365 Copilot and Teams with custom agents, plugins, and integrations.
+This repository contains a collection of sample projects featured in the **Copilot Partner
+Show** podcast. Each sample demonstrates a different way to extend **Microsoft 365 Copilot**
+and **Microsoft Teams** with custom agents, plugins and integrations.
 
-## Overview
+## What's included
 
-The goal of this repository is to provide practical examples and inspiration for developers interested in building solutions that enhance productivity and collaboration using Microsoft 365 technologies.
+| Project | Stack | What it demonstrates |
+| --- | --- | --- |
+| `M365Agent/TravelAgency` | C#, Semantic Kernel, M365 Agents | A travel-agency agent that uses plugins (`DestinationsPlugin`, `WeatherPlugin`) and typed models to answer travel questions inside Teams / Copilot. |
+| `TaskAgent` | TypeScript | An agent sample (VS Code / Teams Toolkit based) showing a different extensibility approach. |
 
-## Included Samples
+> Each sample folder is self-contained — open the one you are interested in and follow the
+> steps below.
 
-- **TicketAgent**: A declarative agent sample that shows how to manage support tickets using Copilot and Teams.
-- **TaskAgent**: An custom engine agent sample for managing tasks and reminders within Teams conversations.
-- **TravelAgency**: A .NET-based sample demonstrating how to build a travel agency agent with plugins for destinations and weather, using the Microsoft 365 Agents SDK and Semantic Kernel.
+## Prerequisites
 
+- [.NET SDK](https://dotnet.microsoft.com/download) (for the C# agent)
+- [Node.js](https://nodejs.org/) LTS (for the TypeScript agent)
+- A Microsoft 365 tenant with Copilot / Teams extensibility enabled
+- An **OpenAI** or **Azure OpenAI** endpoint and key (for the Semantic Kernel samples)
+- [Teams Toolkit](https://aka.ms/teams-toolkit) (recommended)
 
----
+## Getting started
 
-For questions or support, please refer to the SUPPORT.md file.
+1. Clone the repository.
+2. Open the sample folder you want to try (e.g. `M365Agent/TravelAgency`).
+3. Provide the required configuration (model endpoint/keys via user-secrets, app settings).
+4. Build and run, then sideload the agent into Teams / Copilot to test it.
+
+## Contributing & support
+
+See [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md), [`SECURITY.md`](SECURITY.md) and
+[`SUPPORT.md`](SUPPORT.md).
+
+## License
+
+Released under the [MIT License](LICENSE).
